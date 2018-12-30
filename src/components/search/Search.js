@@ -12,11 +12,16 @@ class Search extends Component{
 	}
 	handleSubmit (event){
 		event.preventDefault();
-		let responseUser = GitHubUser.getUSerByUsername(this.state.value);
-		let responseRepos = GitHubUser.getReposByUsername(this.state.value);
-        
-        this.props.updateUser(responseUser);
-		this.props.updateRepos(responseRepos);
+		if(this.state.value !== ''){
+			let responseUser = GitHubUser.getUSerByUsername(this.state.value);
+			let responseRepos = GitHubUser.getReposByUsername(this.state.value);
+	        
+	        this.props.updateUser(responseUser);
+			this.props.updateRepos(responseRepos);
+			this.forceUpdate();
+		}else{
+			alert('Preencha o campo');
+		}
 	}
 	handleChange(event) {
 	    this.setState({value: event.target.value});
