@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
 
 class UserRepos extends Component{
+	constructor(props) {
+	    super(props);
+	    this.state = {count: null};
+	}
 	render(){
 		return(
 			<div>
