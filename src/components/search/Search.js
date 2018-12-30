@@ -19,21 +19,21 @@ class Search extends Component{
 		this.props.updateRepos(responseRepos);
 	}
 	handleChange(event) {
-	    event.preventDefault();
 	    this.setState({value: event.target.value});
-	 }
+	}
 	render(){
 		return (
 			<div className='jumbotron'>
 				<h1>GitHub Infos</h1>
 				<div className='row'>
-					<form onSubmit={this.handleSubmit}>
-						<div className='form-group'>
-							<label>Username</label>
-							<input type='text' className='form-control' placeholder ='Ex:wagnersantos'
-							value={this.state.value} onChange={this.handleChange} />
+					<form onSubmit={this.handleSubmit} style={{width: '100%'}}>
+						<div className="input-group mb-3">
+							<input type='text' className='form-control' 
+								placeholder ='Digite um nome de usuario Ex: wagnersantos'
+								value={this.state.value} 
+								onChange={this.handleChange} />
 						</div>
-						<button type='submit' className='btn btn-primary'>Buscar</button>
+						<input type='submit' className='btn btn-dark' value='Buscar' />
 					</form>
 				</div>
 			</div>
