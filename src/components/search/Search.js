@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import GitHubUser from '../../services/gitHubUser/GitHubUser';
+import PropTypes from 'prop-types';
 
 class Search extends Component{
 	constructor(props) {
@@ -38,6 +39,13 @@ class Search extends Component{
 			</div>
 		)
 	}
+}
+
+SearchUser.propTypes = {
+	updateUser: PropTypes.func.isRequired,
+	updateRepos: PropTypes.func.isRequired,
+	responseUser: PropTypes.object,
+	responseRepos: PropTypes.array,
 }
 
 export default Search;
