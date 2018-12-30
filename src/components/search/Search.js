@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import GitHubUser from '../../services/gitHubUser/GitHubUser';
 
 class Search extends Component{
 	constructor(props) {
@@ -10,6 +11,11 @@ class Search extends Component{
 	}
 	handleSubmit (event){
 		event.preventDefault();
+		let responseUser = GitHubUser.getUSerByUsername(this.state.value);
+		let responseRepos = GitHubUser.getReposByUsername(this.state.value);
+
+		this.props.updateUser(responseUser);
+		this.props.updateRepos(responseRepos);
 	}
 	handleChange(event) {
 	    event.preventDefault();
