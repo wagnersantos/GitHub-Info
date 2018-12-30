@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Search from '../search/Search';
-import UserInfo from '../userInfo/UserInfo'
+import UserInfo from '../userInfo/UserInfo';
 
 class GitHub extends Component{
 	constructor(props){
@@ -22,7 +22,7 @@ class GitHub extends Component{
 		return (
 			<div className="container">
        			<Search updateUser={this.updateUser} updateRepos={this.updateRepos} />
-				<UserInfo user={this.state.user} />
+				<UserInfo user={this.state.user} repos={this.state.repos}/>
       		</div>
 		)
 	}
