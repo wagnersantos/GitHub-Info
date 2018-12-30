@@ -3,12 +3,10 @@ import React, {Component} from 'react';
 class UserRepos extends Component{
 	constructor(props) {
 	    super(props);
-	    this.state = {count: null};
-	}
-	componentWillReceiveProps(props){
-		this.setState({count: props.repos.length});
+	    this.count = 0;
 	}
 	render(){
+		    this.count = this.props.repos.length;
 			const repos = this.props.repos.map( (repo,index) =>
 				(
 					<div className='thumbnail' key={index}>
@@ -29,7 +27,7 @@ class UserRepos extends Component{
 		
 			return(
 				<div>
-					<h2>{this.state.count} Repositories</h2>
+					<h2>{this.count} Repositories</h2>
 					{repos}
 				</div>
 			)
