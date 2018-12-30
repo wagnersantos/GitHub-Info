@@ -14,8 +14,8 @@ class Search extends Component{
 		event.preventDefault();
 		let responseUser = GitHubUser.getUSerByUsername(this.state.value);
 		let responseRepos = GitHubUser.getReposByUsername(this.state.value);
-
-		this.props.updateUser(responseUser);
+        
+        this.props.updateUser(responseUser);
 		this.props.updateRepos(responseRepos);
 	}
 	handleChange(event) {
