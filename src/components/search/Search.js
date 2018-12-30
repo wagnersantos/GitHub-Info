@@ -41,7 +41,7 @@ class Search extends Component{
 	}
 }
 
-SearchUser.propTypes = {
+Search.propTypes = {
 	updateUser: PropTypes.func.isRequired,
 	updateRepos: PropTypes.func.isRequired,
 	responseUser: PropTypes.object,
