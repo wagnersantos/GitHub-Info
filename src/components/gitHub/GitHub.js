@@ -8,11 +8,15 @@ class GitHub extends Component{
 			user: null,
 			repos: [],
 		}
+		this.updateUser = this.updateUser.bind(this); 
+	}
+	updateUser(user){
+		this.setState({user: user});
 	}
 	render(){
 		return (
 			<div className="container">
-       			<Search />
+       			<Search updateUser={this.updateUser} />
       		</div>
 		)
 	}
