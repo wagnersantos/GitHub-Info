@@ -6,11 +6,11 @@ const UserInfo = ({user,repos}) => (
 	user ?
 		(
 			<div className='row'>
-				<div className='col'>
+				<div className='col-lg-4'>
 					<UserProfile user={user}/>
-				</div>	
-				<div className='col'>
-					<UserRepos repos={repos}/>
+				</div>
+				<div className='col-lg-8'>
+					<UserRepos repos={repos} />
 				</div>
 			</div>
 		) : null
