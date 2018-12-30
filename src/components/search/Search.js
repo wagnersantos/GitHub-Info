@@ -4,7 +4,12 @@ class Search extends Component{
 	constructor(props) {
 	    super(props);
 	    this.state = {value: ''};
+		
 		this.handleChange = this.handleChange.bind(this);
+	    this.handleSubmit = this.handleSubmit.bind(this);
+	}
+	handleSubmit (event){
+		event.preventDefault();
 	}
 	handleChange(event) {
 	    event.preventDefault();
@@ -15,7 +20,7 @@ class Search extends Component{
 			<div className='jumbotron'>
 				<h1>GitHub Infos</h1>
 				<div className='row'>
-					<form>
+					<form onSubmit={this.handleSubmit}>
 						<div className='form-group'>
 							<label>Username</label>
 							<input type='text' className='form-control' placeholder ='Ex:wagnersantos'
