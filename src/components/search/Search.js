@@ -13,12 +13,13 @@ class Search extends Component{
 	handleSubmit (event){
 		event.preventDefault();
 		if(this.state.value !== ''){
-			let responseUser = GitHubUser.getUSerByUsername(this.state.value);
-			let responseRepos = GitHubUser.getReposByUsername(this.state.value);
-	        
-	        this.props.updateUser(responseUser);
-			this.props.updateRepos(responseRepos);
-			this.forceUpdate();
+			GitHubUser.getUserByUsername(this.state.value)
+				.then(response => response.json())
+		    	.then(data => {this.props.updateUser(data)});
+			
+			GitHubUser.getReposByUsername(this.state.value)
+				.then(response => response.json())
+		    	.then(data => {this.props.updateRepos(data)});
 		}else{
 			alert('Preencha o campo');
 		}
