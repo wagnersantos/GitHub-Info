@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import GitHub from '../gitHub/GitHub';
+import Develop from '../develop/Develop';
 
 class App extends Component {
   render() {
     return (
-      <GitHub />
+    	<div>
+	      <GitHub />
+    	  <Develop />
+    	</div>
     );
   }
 }

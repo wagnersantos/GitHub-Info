@@ -5,6 +5,9 @@ class UserRepos extends Component{
 	    super(props);
 	    this.count = 0;
 	}
+	componentDidMount(){
+		document.getElementsByTagName('footer')[0].style.position = 'relative';
+	}
 	render(){
 		    this.count = this.props.repos.length;
 			const repos = this.props.repos.map( (repo,index) =>
@@ -21,7 +24,8 @@ class UserRepos extends Component{
 								<p>
 									<a href={repo.html_url} className='btn btn-dark' 
 										role='button'>Repository</a>
-									<a href={`${repo.html_url}/issues`} className='btn btn-secondary ml-2' 
+									<a href={`${repo.html_url}/issues`} 
+										className='btn btn-secondary ml-2' 
 										role='button'>
 									Issues ({repo.open_issues})</a>
 								</p>
