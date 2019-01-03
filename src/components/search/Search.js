@@ -20,6 +20,7 @@ class Search extends Component{
 			GitHubUser.getReposByUsername(this.state.value)
 				.then(response => response.json())
 		    	.then(data => {this.props.updateRepos(data)});
+
 		}else{
 			alert('Preencha o campo');
 		}
